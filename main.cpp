@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <thread>
+#include <chrono>
 using namespace std;
 
 float calculate_dis(int x1, int y1, int x2, int y2) {
@@ -32,7 +33,7 @@ void shakeMouse() {
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine, int nCmdShow){
 //int main(){
     srand(static_cast<unsigned int>(time(nullptr)));
-    chrono::milliseconds del = chrono::milliseconds(10);
+    chrono::milliseconds del = chrono::milliseconds(2);
     GetCursorPos(&prev_pos);
     chrono::steady_clock::time_point prev_time = chrono::high_resolution_clock::now();
     chrono::steady_clock::time_point curr_time = chrono::high_resolution_clock::now();
